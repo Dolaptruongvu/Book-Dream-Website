@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Dream</title>
+    <link rel="stylesheet" href="/Book Dream/css/style.css" />
+    <link rel="stylesheet" href="/Book Dream/css/book-filter.css" />
+    <%- include("layout/favicon") %>
+  </head>
+  <body>
+    <%- include("layout/header") %>
+
+    <div class="breadcrumb-container">
+      <ul class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Books</a></li>
+      </ul>
+    </div>
+    <section class="filter">
+      <div class="book-grid-container">
+        <div class="book-collections">
+          <h4>Books</h4>
+          <!-- <div class="category">
+            <div class="category-list">
+              <button>Today</button>
+              <button>This Week</button>
+              <button>This Month</button>
+            </div>
+          </div> -->
+          <div class="books">
+            <% for (var book of books) { %>
+            <div class="book-card">
+              <div class="img">
+                <a href="/details/<%=book._id%>"
+                  ><img src="/Img/Books/<%= book.images[0] %>" alt=""
+                /></a>
+                <!-- <button class="like" id="likebtn">
+                  <i class="fa-regular fa-heart"></i>
+                </button> -->
+              </div>
+              <h5><%= book.title %></h5>
+              <small>
+                <% for (var cate of book.category) { %>
+                <a href="/"><%= cate %></a>
+                <% } %>
+              </small>
+              <div class="star-rating">
+                <i class="fa-solid fa-star"></i> <%= book.ratings %>
+              </div>
+            </div>
+            <% } %>
+          </div>
+          <div class="footer">
+            <div class="data-shown">
+              <p>Showing 12 from 50 data</p>
+            </div>
+            <div class="pagination">
+              <% if(pagination.previousPage){ %>
+              <a href="/filter<%= pagination.previousPage %>"
+                ><i class="fa fa-chevron-left"></i>Previous</a
+              >
+              <% } %>
+              <div class="number">
+                <% for(var i=1; i<=pagination.totalPage; i++) { %>
+                <a href="/filter<%= currentQueryUrlString %>&p=<%= i %>">
+                  <%= i %>
+                </a>
+                <% } %>
+              </div>
+              <% if(pagination.nextPage){ %>
+              <a href="/filter<%= pagination.nextPage %>"
+                >Next<i class="fa fa-chevron-right"></i
+              ></a>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="subscription">
+      <div class="container">
+        <h4>
+          Subscribe our newsletter for Latest <br />
+          books updates
+        </h4>
+      </div>
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+    </section>
+
+    <%- include("layout/footer") %>
+    <button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <script src="../js/repeat-js.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/Book Dream/js/back-to-top.js"></script>
+    <script>
+      document
+        .getElementById("profileButton")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.assign("/profile");
+        });
+    </script>
+  </body>
+</html>

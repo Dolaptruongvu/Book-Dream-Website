@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Dream</title>
+    <link rel="stylesheet" href="/Book Dream/css/style.css" />
+    <link rel="stylesheet" href="/Book Dream/css/book-filter.css" />
+
+    <!--- google font link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fontawesome Link for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <div class="img">
+            <a href="/"><img src="/Book Dream/images/logo1.png" alt="" /></a>
+          </div>
+          <div class="logo-header">
+            <h4><a href="/">Book Dream</a></h4>
+            <small>Online bookstore</small>
+          </div>
+        </div>
+        <ul class="nav-list">
+          <div class="logo">
+            <div class="title">
+              <div class="img">
+                <img src="/Book Dream/images/logo1.png" alt="" />
+              </div>
+              <div class="logo-header">
+                <h4><a href="/">Book Dream</a></h4>
+                <small>Online bookstore</small>
+              </div>
+            </div>
+            <button class="close"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <li><a href="/">Home</a></li>
+          <li><a href="./service.html">Service</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li>
+            <a id="bookButton" style="cursor: pointer">Books</a>
+          </li>
+          <li class="profile-RP"><a href="Pages/proflie.html">Profile</a></li>
+          <button id="logout" class="logoutBtn">Log out</button>
+          <div class="profile-icon">
+            <a href="./Pages/proflie.html"
+              ><img src="/TruongVu/Bookstore/Public/Book Dream/images/" alt=""
+            /></a>
+          </div>
+        </ul>
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- <div id="slider-profile">
+      <div class="banner-info">
+        <div class="container">
+          <div class="col-md-4 header-left">
+            <img
+              src="/TruongVu/Bookstore/Public/Book Dream/images/avatar.jpg"
+              alt=""
+            />
+            <div class="col-md-8 header-right">
+              <b>
+                <h1><%= customer.name %></h1>
+                <h6><b style="font-size: 120%; color: lightblue">ID</b></h6>
+                <ul class="address">
+                  <li>
+                    <ul class="address-text">
+                      <li ><p class="pad">PHONE </p></li>
+                      <li>
+                        <b style="color: lightblue"
+                          ><%= customer.phoneNumber %></b
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="address-text INF">
+                      <li><b>ADDRESS </b></li>
+                      <li>
+                        <b style="color: lightblue"><%= customer.address %></b>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="address-text">
+                      <li>E-MAIL </li>
+                      <li>
+                        <b
+                          ><a
+                            style="color: lightblue"
+                          >
+                            <%= customer.email %></a
+                          ></b
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </b>
+            </div>
+          </div> -->
+
+
+          <div id="slider-profile">
+            <div class="banner-info">
+                <div class="container">
+                    <!-- <div class="col-md-4 header-left">
+                        <img src="/TruongVu/Bookstore/Public/Book Dream/images/avatar.jpg" alt="" />
+                    </div> -->
+                    <div class="col-md-8 header-right">
+                        <h1><%= customer.name %></h1>
+                        <!-- <h6><b style="font-size: 120%; color: lightblue">ID</b></h6> -->
+                        <ul class="address">
+                            <li>
+                                <ul class="address-text">
+                                    <li><p class="pad">PHONE</p></li>
+                                    <li><b style="color: lightblue"><%= customer.phoneNumber %></b></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="address-text INF" >
+                                    <li><b>ADDRESS</b></li>
+                                    <li><b id="edit" style="color: lightblue "><%= customer.address %></b></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="address-text">
+                                    <li>E-MAIL</li>
+                                    <li><b><a style="color: lightblue"><%= customer.email %></a></b></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="top-nav-profile wow">
+      <div class="container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+
+        <div
+          class="collapse navbar-collapse"
+          data-spy="affix"
+          data-offset-top="197"
+        >
+          <div class="menu">
+            <ul class="nav-profile navbar-profile">
+              <% if(customer.role == "shipper"){ %>
+              <li style="font-size: 120%">
+                <a href="#Shipper" class="scroll">Shipper</a>
+              </li>
+              <% } else if (customer.role == "user"){ %>
+              <li style="font-size: 120%">
+                <a href="#History" class="scroll">History</a>
+              </li>
+              <% } else if (customer.role == "admin"){ %>
+              <li style="font-size: 120%">
+                <a href="/profile?page=add" class="scroll">Add book</a>
+              </li>
+              <li style="font-size: 120%">
+                <a href="/profile?page=edit" class="scroll">Edit book</a>
+              </li>
+              <% } %>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- show history -->
+    <% if (customer.role === "user") { %>
+    <section id="History" class="detail-payment"  style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <% for( let bill of listBills ) { %>
+      <div class="summary-section">
+        <h4>Billing</h4>
+        <div class="order-detail-table">
+          <table>
+            <tr>
+              <td>Order Subtotal</td>
+              <td>$<%= bill.price %></td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td><%= bill.customer.address %></td>
+            </tr>
+            <tr>
+              <td>Status</td>
+              <td>
+                <% if(bill.haspaid){ %>
+                <div>paid</div>
+                <% } else{ %>
+                <div>unpaid</div>
+                <% } %>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <% } %>
+    </section>
+    <% } %> <% if (customer.role === "admin") { %>
+    <!-- show Management -->
+    <!-- <section id="Management" class="detail-payment">
+      <div class="summary-section">
+        <h4>Set role</h4>
+        <div class="order-detail-table">
+          <table>
+            <tr></tr>
+            <tr>
+              <td>
+                <label for="choices">role:</label>
+                <select id="choices" name="choices">
+                  <option value="option1">User</option>
+                  <option value="option2">Admin</option>
+                  <option value="option3">Shipper</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section> -->
+    <!-- end Management -->
+
+    <!-- show Add Book -->
+    <section id="Add Book" class="discount-summary" class="detail-payment">
+      <% if (!page || page === "add") { %>
+      <div class="summary-section">
+        <h4>Cart Subtotal</h4>
+        <div class="order-detail-table">
+          <table>
+            <tr>
+              <td>title</td>
+              <td>
+                <input type="text" id="name" name="title" placeholder="title" />
+              </td>
+            </tr>
+            <tr>
+              <td>images</td>
+              <td><input type="file" id="name" name="images" /></td>
+            </tr>
+            <tr>
+              <td>author</td>
+              <td>
+                <input
+                  type="text"
+                  id="name"
+                  name="author"
+                  placeholder="author"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>category</td>
+              <td>
+                <input
+                  type="text"
+                  id="name"
+                  name="category"
+                  placeholder="category"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>language</td>
+              <td>
+                <input
+                  type="text"
+                  id="name"
+                  name="language"
+                  placeholder="language"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>translator</td>
+              <td>
+                <input
+                  type="text"
+                  id="name"
+                  name="translator"
+                  placeholder="translator"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>totalPages:</td>
+              <td><input type="number" id="name" name="totalPages" /></td>
+            </tr>
+            <tr>
+              <td>releaseDate</td>
+              <td><input type="date" id="name" name="releaseDate" /></td>
+            </tr>
+            <tr>
+              <td>publisher</td>
+              <td>
+                <input
+                  type="text"
+                  id="name"
+                  name="publisher"
+                  placeholder="publisher"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>coverType</td>
+              <td>
+                <input
+                  type="text"
+                  id="name"
+                  name="coverType"
+                  placeholder="coverType"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>weight</td>
+              <td><input type="number" id="name" name="weight" /></td>
+            </tr>
+            <tr>
+              <td>quantity</td>
+              <td>
+                <input
+                  type="text"
+                  id="name"
+                  name="quantity"
+                  placeholder="quantity"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>summary</td>
+              <td>
+                <input
+                  type="text"
+                  id="name"
+                  name="summary"
+                  placeholder="summary"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>ratings</td>
+              <td><input type="number" id="name" name="ratings" /></td>
+            </tr>
+            <tr>
+              <td>price</td>
+              <td><input type="number" id="name" name="price" /></td>
+            </tr>
+          </table>
+          <button id="add-book">Add</button>
+        </div>
+      </div>
+      <% } %> <% if (page && page === "edit") { %>
+      <div class="summary-section">
+        <h4>edit book</h4>
+        <div class="order-detail-table">
+          <table>
+            <tr>
+              <td>Name</td>
+              <td>
+                <div class="search-box">
+                  <form class="search-field">
+                    <input
+                      type="hidden"
+                      placeholder="Search over 30 million Book titles"
+                      name="page"
+                      value="edit"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Search over 30 million Book titles"
+                      name="name"
+                    />
+                    <button type="submit" class="search-icon">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+
+            <% books.forEach(book => { %>
+            <tr>
+              <td>
+                <button class="delete-book" data-id="<%= book._id %>">
+                  delete
+                </button>
+              </td>
+              <td><%= book.title %></td>
+            </tr>
+            <% }) %>
+          </table>
+        </div>
+      </div>
+      <% } %>
+    </section>
+    <!-- end Add book -->
+    <% } %> <% if (customer.role === "shipper") { %>
+    <!-- show Shipping -->
+    <section
+      id="Shipper"
+      class="detail-payment"
+      style="display: flex; flex-direction: column; gap: 20px"
+    >
+      <% listBills.forEach(bill => { %>
+      <div class="summary-section">
+        <h4>Billing</h4>
+        <div class="order-detail-table">
+          <table>
+            <tr>
+              <td>Order Subtotal</td>
+              <td>$<%= bill.price %></td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td><%= bill.customer.address %></td>
+            </tr>
+            <tr>
+              <td>Status</td>
+              <td>
+                <% if (bill.haspaid) { %>
+                <div>paid</div>
+                <% } else { %>
+                <div style="display: flex; gap: 20px; align-items: center">
+                  <div>unpaid</div>
+                  <button class="btn-pay" data-id="<%= bill._id %>">PAY</button>
+                </div>
+
+                <% }%>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <% }) %>
+    </section>
+    <!-- end shipping -->
+    <% } %>
+
+    <section class="subscription">
+      <div class="container">
+        <h4>
+          Subscribe our newsletter for Latest <br />
+          books updates
+        </h4>
+      </div>
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="logo-description">
+          <div class="logo">
+            <div class="img">
+              <img src="/Book Dream/images/logo1.png" alt="" />
+            </div>
+            <div class="title">
+              <h4>Book Dream</h4>
+              <small>Online bookstore</small>
+            </div>
+          </div>
+          <div class="logo-body">
+            <p>
+              Thank you for choosing our website to buy books. Hope you choose
+              your dream book
+            </p>
+          </div>
+          <div class="social-links">
+            <h4>Follow Us</h4>
+            <ul class="links">
+              <li>
+                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="categories list">
+          <h4>Book Categories</h4>
+          <ul>
+            <li><a href="Pages/book-filter.html">Action</a></li>
+            <li><a href="Pages/book-filter.html">Adventure</a></li>
+            <li><a href="Pages/book-filter.html">Comedy</a></li>
+            <li><a href="Pages/book-filter.html">Crime</a></li>
+            <li><a href="Pages/book-filter.html">Drama</a></li>
+            <li><a href="Pages/book-filter.html">Fantasy</a></li>
+            <li><a href="Pages/book-filter.html">Horror</a></li>
+          </ul>
+        </div>
+        <div class="quick-links list">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">About Us</a></li>
+            <li><a href="pages/contact.html">Contact Us</a></li>
+            <li><a href="/filter">Products</a></li>
+            <li><a href="pages/login.html">Login</a></li>
+            <li><a href="Pages/signup.html">Sign Up</a></li>
+            <li><a href="pages/cart-item.html">Cart</a></li>
+            <li><a href="pages/checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <div class="our-store list">
+          <h4>Our Store</h4>
+          <div class="map" style="margin-top: 1rem">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244.9527212788825!2d106.61873322077284!3d10.7926501317974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752d30443d946b%3A0x51e2e88da8981c4a!2zQ8OUTkcgVFkgVE5ISCBUSMavxqBORyBN4bqgSSBE4buKQ0ggVuG7pCBUUlVZ4buATiBUSMOUTkcgU01BUlQgVEnhur5OIFBIw4FU!5e0!3m2!1sen!2s!4v1713245877633!5m2!1sen!2s"
+              height="70"
+              style="width: 100%; border: none; border-radius: 5px"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <ul>
+            <li>
+              <a href=""
+                ><i class="fa-solid fa-location-dot"></i>69/9 Lê Sát P.Tân Quý,
+                Q. Tân Phú</a
+              >
+            </li>
+            <li>
+              <a href=""><i class="fa-solid fa-phone"></i>+84 123456789</a>
+            </li>
+            <li>
+              <a href=""
+                ><i class="fa-solid fa-envelope"></i>support@bookdream.id</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
+    <!-- <script src="js/back-to-top.js"></script> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+      integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <!-- <script src="/Book Dream/js/script.js"></script> -->
+    <script src="/Book Dream/js/repeat-js.js"></script>
+    <script src="/Book Dream/js/add-to-cart.js"></script>
+    <script src="/Book Dream/js/profile.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script>
+      const logoutBtn = document.getElementById("logout");
+
+      logoutBtn.addEventListener("click", function () {
+        fetch("/api/v1/customer/logout")
+          .then((res) => {
+            res
+              .json()
+              .then((res) => {
+                if (res.status == "success") {
+                  window.location.href = "/";
+                }
+              })
+              .catch((er) => {
+                console.error(er);
+                alert("Có lỗi xảy ra!");
+              });
+          })
+          .catch((e) => {
+            console.error(e);
+            alert("Có lỗi xảy ra!");
+          });
+      });
+
+      var bookButton = document.getElementById("bookButton");
+      bookButton.addEventListener("click", function () {
+        window.location.assign("/filter");
+      });
+    </script>
+    <script>
+      $(".btn-pay").click(async function (e) {
+        const id = $(e.target).data("id");
+        try {
+          await axios.post(`/api/v1/bill/update-pay/${id}`);
+          alert("Update successfully!");
+          window.location.reload();
+        } catch (error) {
+          alert("Something was wrong!");
+          console.log(error);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Dream</title>
+    <%- include("layout/favicon") %>
+  </head>
+  <body>
+    <%- include("layout/header") %>
+
+    <!-- main-slider -->
+    <section class="w3l-main-slider position-relative" id="home">
+      <div class="companies20-content">
+        <div class="owl-one owl-carousel owl-theme">
+          <div class="item">
+            <li>
+              <div class="slider-info banner-view bg bg2">
+                <div class="banner-info">
+                  <h3>Harry Potter</h3>
+                  <p>
+                    Explore the huge library of Harry Potter books to satisfy
+                    your wizarding passion!<span class="over-para"> </span>
+                  </p>
+                  <a
+                    href="http://localhost:3000/details/66461794689eb091333252a4"
+                    class="popup-with-zoom-anim play-view1"
+                  >
+                    <span class="video-play-icon">
+                      <span class="fa-solid fa-cart-shopping"></span>
+                    </span>
+                    <h6>Buy Now</h6>
+                  </a>
+                  <div
+                    id="small-dialog1"
+                    class="zoom-anim-dialog mfp-hide"
+                  ></div>
+                </div>
+              </div>
+            </li>
+          </div>
+          <div class="item">
+            <li>
+              <div class="slider-info banner-view banner-top1 bg bg2">
+                <div class="banner-info">
+                  <h3>Percy Jackson</h3>
+                  <p>
+                    Immerse yourself in the vibrant Percy Jackson books, become
+                    a semi-god hero today!<span class="over-para"> </span>
+                  </p>
+                  <a
+                    href="http://localhost:3000/details/6646179a689eb091333252a6"
+                    class="popup-with-zoom-anim play-view1"
+                  >
+                    <span class="video-play-icon">
+                      <span class="fa-solid fa-cart-shopping"></span>
+                    </span>
+                    <h6>Buy Now</h6>
+                  </a>
+                  <div
+                    id="small-dialog2"
+                    class="zoom-anim-dialog mfp-hide"
+                  ></div>
+                </div>
+              </div>
+            </li>
+          </div>
+          <div class="item">
+            <li>
+              <div class="slider-info banner-view banner-top2 bg bg2">
+                <div class="banner-info">
+                  <h3>Bridge to Terabithia</h3>
+                  <p>
+                    Immerse yourself in a touching friendship story that evokes
+                    childhood innocence with Bridge to Terabithia!<span
+                      class="over-para"
+                    >
+                    </span>
+                  </p>
+                  <a
+                    href="http://localhost:3000/details/664c8dc8d23933d6da9b9319"
+                    class="popup-with-zoom-anim play-view1"
+                  >
+                    <span class="video-play-icon">
+                      <span class="fa-solid fa-cart-shopping"></span>
+                    </span>
+                    <h6>Buy Now</h6>
+                  </a>
+                  <div
+                    id="small-dialog3"
+                    class="zoom-anim-dialog mfp-hide"
+                  ></div>
+                </div>
+              </div>
+            </li>
+          </div>
+          <div class="item">
+            <li>
+              <div class="slider-info banner-view banner-top3 bg bg2">
+                <div class="banner-info">
+                  <h3>Twilight</h3>
+                  <p>
+                    Experience the powerful attraction of vampires and true love
+                    in Twilight!<span class="over-para"> </span>
+                  </p>
+                  <a
+                    href="http://localhost:3000/details/664c8916d23933d6da9b9316"
+                    class="popup-with-zoom-anim play-view1"
+                  >
+                    <span class="video-play-icon">
+                      <span class="fa-solid fa-cart-shopping" ></span>
+                    </span>
+                    <h6>Buy Now</h6>
+                  </a>
+                  <div
+                    id="small-dialog4"
+                    class="zoom-anim-dialog mfp-hide"
+                  ></div>
+                </div>
+              </div>
+            </li>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer">
+      <div class="header">
+        <h4>Special Offers</h4>
+        <p>Choose book which the best price</p>
+      </div>
+      <div class="offer-container">
+        <% for (var book of specialOffer){ %>
+        <div class="offer">
+          <div class="img">
+            <a href="/details/<%=book._id%>"><img src="/Img/Books/<%= book.images[0]%>" alt="" /></a>
+          </div>
+          <div class="offer-content">
+            <h5><%= book.title %></h5>
+            <div class="genre">
+              <% for (var cate of book.category) { %>
+              <span><%= cate %></span>
+              <% } %>
+            </div>
+            <p><%= book.summary %></p>
+            <small><%= book.author %></small>
+            <div class="offer-bottom">
+              <!-- <button class="cartbtn">
+                <i class="fa-solid fa-cart-shopping"></i>Add to cart
+              </button> -->
+              <!-- <div class="price">
+                <strong><span>$</span><%= book.price %></strong>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </section>
+
+    <section class="sale">
+      <div class="header">
+        <h4>Famous Book</h4>
+        <p>Great books that many people seek to read</p>
+      </div>
+
+      <div class="book-container">
+        <% for (var book of famousBooks){ %>
+          <div class="book">
+            <div class="img">
+              <a href="/details/<%=book._id%>"
+                ><img src="/Img/Books/<%= book.images[0] %>" alt="" />
+              </a>
+            </div>
+            <h5><%= book.title%></h5>
+            <% for (var cate of book.category) { %>
+              <small><%= cate %></small>
+              <% } %>
+            <div class="price">
+              <span>$<%= book.price%></span>
+              <span><strike>$<%= book.price%></strike></span>
+            </div>
+          </div>
+          <% } %>
+        </ul>
+       
+      </div>
+    </section>
+
+    <!-- <section class="book-sale">
+      <div class="heading">
+        <h4>Books On Sale</h4>
+        <div class="arrowbtn">
+          <i id="left" class="fa-solid fa-angle-left"></i>
+          <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+      </div>
+      <div class="book-container">
+        <div class="wrapper">
+          <ul class="carousel">
+            <li class="card">
+              <div class="img">
+                <a href="Pages/book-detail.html"
+                  ><img src="/Book Dream/images/book-1.jpg" alt=""
+                /></a>
+                <span class="badge">50%</span>
+              </div>
+              <h5>The Giver</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <a href="Pages/book-detail.html"
+                  ><img src="/Book Dream/images/book-2.jpg" alt=""
+                /></a>
+                <span class="badge">50%</span>
+              </div>
+              <h5>The Wright ...</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <a href="Pages/book-detail.html"
+                  ><img src="/Book Dream/images/book-9.jpg" alt=""
+                /></a>
+                <span class="badge">50%</span>
+              </div>
+              <h5>The Ruins Of...</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <a href="Pages/book-detail.html"
+                  ><img src="/Book Dream/images/book-10.jpg" alt=""
+                /></a>
+                <span class="badge">50%</span>
+              </div>
+              <h5>Percy Jackson</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <a href="Pages/book-detail.html"
+                  ><img src="/Book Dream/images/book-5.jpg" alt=""
+                /></a>
+                <span class="badge">50%</span>
+              </div>
+              <h5>To kill a...</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <a href="Pages/book-detail.html"
+                  ><img src="/Book Dream/images/book-6.jpg" alt=""
+                /></a>
+                <span class="badge">50%</span>
+              </div>
+              <h5>Horry Potter</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <a href="Pages/book-detail.html"
+                  ><img src="/Book Dream/images/book-7.jpg" alt=""
+                /></a>
+                <span class="badge">50%</span>
+              </div>
+              <h5>Heroes of ...</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="feature">
+      <div class="main">
+        <div class="content">
+          <h4>Featured Books</h4>
+          <!-- <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
+            Molestias, illum? Doloremque eius quis officiis rerum pariatur.
+          </p> -->
+          <div class="featured-book-card">
+            <div class="img">
+              <a id="bookButton"
+                ><img src="/Book Dream/images/book-2.jpg" alt=""
+              /></a>
+            </div>
+            <div class="card-description">
+              <div class="card-header">
+                <div class="icon">
+                  <i class="fa-regular fa-bookmark"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <div class="title">
+                  <h5>The Wright Brothers</h5>
+                  <small>biography, adventure</small>
+                </div>
+              </div>
+              <div class="card-body">
+                <h6>Synopsis</h6>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Suscipit, aperiam magnam! Eius voluptas nihil repellendus quam
+                  velit harum vel alias mollitia veritatis omnis. Ut vel, fugiat
+                  obcaecati odio minus molestiae?
+                </p>
+                <div class="author-year">
+                  <div class="author">
+                    <small>Written by</small>
+                    <strong>Kevin Smiley</strong>
+                  </div>
+                  <div class="year">
+                    <small>Year</small>
+                    <strong>2019</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <!-- <div class="price">
+                  <span>$84.78</span>
+                  <strike>$90.00</strike>
+                </div> -->
+                <!-- <div class="cartbtn">
+                  <button><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="book-section">
+          <div class="container">
+            <div class="img">
+              <a onclick="window.location.href= '/filter'"
+                ><img src="/Book Dream/images/book-2.jpg" alt=""
+              /></a>
+            </div>
+            <div class="img">
+              <a onclick="window.location.href= '/filter'"
+                ><img src="/Book Dream/images/book-1.jpg" alt=""
+              /></a>
+            </div>
+            <div class="img">
+              <a onclick="window.location.href= '/filter'"
+                ><img src="/Book Dream/images/book-3.jpg" alt=""
+              /></a>
+            </div>
+            <div class="img">
+              <a onclick="window.location.href= '/filter'"
+                ><img src="/Book Dream/images/book-4.jpg" alt=""
+              /></a>
+            </div>
+            <div class="img">
+              <a onclick="window.location.href= '/filter'"
+                ><img src="/Book Dream/images/book-5.jpg" alt=""
+              /></a>
+            </div>
+            <div class="img">
+              <a onclick="window.location.href= '/filter'"
+                ><img src="/Book Dream/images/book-6.jpg" alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+    </section>
+
+    <section class="subscription">
+      <div class="container">
+        <h4>
+          Subscribe our newsletter for Latest <br />
+          books updates
+        </h4>
+      </div>
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+    </section>
+
+    <%- include("layout/footer") %>
+    <!-- <button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button> -->
+    <script src="/Book Dream/js/back-to-top.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script src="/Book Dream/js/script.js"></script>
+    <script src="/Book Dream/js/repeat-js.js"></script>
+    <script src="/Book Dream/js/add-to-cart.js"></script>
+    <!--/theme-change-->
+    <script src="/Book Dream/js/owl.carousel.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        //Horizontal Tab
+        $("#parentHorizontalTab").easyResponsiveTabs({
+          type: "default", //Types: default, vertical, accordion
+          width: "auto", //auto or any width like 600px
+          fit: true, // 100% fit in a container
+          tabidentify: "hor_1", // The tab groups identifier
+          activate: function (event) {
+            // Callback function if tab is switched
+            var $tab = $(this);
+            var $info = $("#nested-tabInfo");
+            var $name = $("span", $info);
+            $name.text($tab.text());
+            $info.show();
+          },
+        });
+      });
+    </script>
+    <!--/theme-change-->
+    <script src="./assets/css/JS/theme-change.js"></script>
+  <script src="./assets/css/JS/owl.carousel.js"></script>
+    <!-- script for banner slider -->
+    <script>
+      $(document).ready(function () {
+        $(".owl-one").owlCarousel({
+          stagePadding: 280,
+          loop: true,
+          margin: 20,
+          nav: true,
+          responsiveClass: true,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplaySpeed: 1000,
+          autoplayHoverPause: false,
+          responsive: {
+            0: {
+              items: 1,
+              stagePadding: 40,
+              nav: false,
+            },
+            480: {
+              items: 1,
+              stagePadding: 60,
+              nav: true,
+            },
+            667: {
+              items: 1,
+              stagePadding: 80,
+              nav: true,
+            },
+            1000: {
+              items: 1,
+              nav: true,
+            },
+          },
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".owl-three").owlCarousel({
+          loop: true,
+          margin: 20,
+          nav: false,
+          responsiveClass: true,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplaySpeed: 1000,
+          autoplayHoverPause: false,
+          responsive: {
+            0: {
+              items: 2,
+              nav: false,
+            },
+            480: {
+              items: 2,
+              nav: true,
+            },
+            667: {
+              items: 3,
+              nav: true,
+            },
+            1000: {
+              items: 5,
+              nav: true,
+            },
+          },
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".owl-mid").owlCarousel({
+          loop: true,
+          margin: 0,
+          nav: false,
+          responsiveClass: true,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplaySpeed: 1000,
+          autoplayHoverPause: false,
+          responsive: {
+            0: {
+              items: 1,
+              nav: false,
+            },
+            480: {
+              items: 1,
+              nav: false,
+            },
+            667: {
+              items: 1,
+              nav: true,
+            },
+            1000: {
+              items: 1,
+              nav: true,
+            },
+          },
+        });
+      });
+      //
+      var bookButton = document.getElementById("bookButton");
+      bookButton.addEventListener("click", function () {
+        window.location.assign("/filter");
+      });
+      document
+        .getElementById("loginButton")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.assign("/login");
+        });
+      document
+        .getElementById("signupButton")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.assign("/signup");
+        });
+        document
+        .getElementById("profileButton")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.assign("/profile");
+        });
+    </script>
+  </body>
+</html>

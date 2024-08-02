@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookoe - Online Book Store website</title>
+    <%- include("layout/favicon") %>
+  </head>
+  <body>
+    <%- include("layout/header") %>
+    <div class="breadcrumb-container">
+      <ul class="breadcrumb">
+        <li><a href="/" style="color: #6c5dd4">Home</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="service-title">
+      <h3>Payment success</h3>
+    </div>
+
+    <section id="loginsection" class="login">
+      <div class="login-form">
+        <h4>Payment success</h4>
+        <p>Your payment process has been successful</p>
+        <div class="input-form">
+          <!-- <div class="input-field">
+          <label for="email">Email *</label>
+          <input type="email" name="" id="email" placeholder="Your Email">
+        </div> -->
+          <!-- <div class="input-field">
+          <label for="password">Password *</label>
+          <input type="password" name="" id="password" placeholder="Password">
+        </div> -->
+          <!-- <p>Forgot Password ?<a href=""> Click Here</a></p> -->
+          <button id="mainPageButton">return to main page</button>
+          <!-- <p>Don't Have an Account ? <a href="./signup.html">Create Account</a></p> -->
+        </div>
+      </div>
+    </section>
+    <section  class="discount-summary">
+      <div class="summary-section">
+        <h4>Billing</h4>
+        <div class="order-detail-table">
+          <table>
+            <tr>
+              <td>Order Subtotal</td>
+              <td>
+                <ol>
+                  <% for( let index = 0; index < bill.book.length; index++ ) {
+                  %>
+                  <li><%= bill.book[index].title %></li>
+                  <% } %>
+                </ol>
+              </td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td><%= bill.customer.name %></td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td><%= bill.customer.address %></td>
+            </tr>
+            <tr>
+              <td>Phone</td>
+              <td><%= bill.customer.phoneNumber %></td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td><%= bill.price %></td>
+            </tr>
+            <tr>
+              <td>Status</td>
+              <td>
+                <% if(bill.haspaid){ %>
+                <div>paid</div>
+                <% } else{ %>
+                <div>unpaid</div>
+                <% } %>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="subscription">
+      <div class="container">
+        <h4>
+          Subscribe our newsletter for Latest <br />
+          books updates
+        </h4>
+      </div>
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+    </section>
+
+    <%- include("layout/footer") %>
+    <button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <script src="../js/back-to-top.js"></script>
+    <script>
+      document
+        .getElementById("mainPageButton")
+        .addEventListener("click", function () {
+          window.location.href = "/";
+        });
+    </script>
+  </body>
+</html>

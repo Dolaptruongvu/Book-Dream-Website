@@ -1,0 +1,319 @@
+<footer>
+  <div class="container">
+    <div class="logo-description">
+      <div class="logo">
+        <div class="img">
+          <img src="/Book Dream/images/logo1.png" alt="" />
+        </div>
+        <div class="title">
+          <h4>Book Dream</h4>
+          <small>Online bookstore</small>
+        </div>
+      </div>
+      <div class="logo-body">
+        <p>
+          Thank you for choosing our website to buy books. Hope you choose your
+          dream book
+        </p>
+      </div>
+      <div class="social-links">
+        <h4>Follow Us</h4>
+        <ul class="links">
+          <li>
+            <a href="https://www.facebook.com/anderswinchester"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="categories list">
+      <h4>Developers</h4>
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/anderswinchester"
+            >Đỗ Lập Trường Vũ</a
+          >
+        </li>
+        <li>
+          <a href="https://www.facebook.com/profile.php?id=100013200197695"
+            >Tăng Quốc Tuấn</a
+          >
+        </li>
+        <li>
+          <a href="https://www.facebook.com/Urlgrim">Lương Anh Tuấn</a>
+        </li>
+      </ul>
+    </div>
+    <div class="quick-links list">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Contact Us</a></li>
+        <li><a href="">Products</a></li>
+        <li><a href="">Login</a></li>
+        <li><a href="">Sign Up</a></li>
+        <li><a href="">Cart</a></li>
+        <li><a href="">Checkout</a></li>
+      </ul>
+    </div>
+    <div class="our-store list">
+      <h4>Our Store</h4>
+      <div class="map" style="margin-top: 1rem">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244.9527212788825!2d106.61873322077284!3d10.7926501317974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752d30443d946b%3A0x51e2e88da8981c4a!2zQ8OUTkcgVFkgVE5ISCBUSMavxqBORyBN4bqgSSBE4buKQ0ggVuG7pCBUUlVZ4buATiBUSMOUTkcgU01BUlQgVEnhur5OIFBIw4FU!5e0!3m2!1sen!2s!4v1713245877633!5m2!1sen!2s"
+          height="70"
+          style="width: 100%; border: none; border-radius: 5px"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <ul>
+        <li>
+          <a href=""
+            ><i class="fa-solid fa-location-dot"></i>69/9 Lê Sát P.Tân Quý, Q.
+            Tân Phú</a
+          >
+        </li>
+        <li>
+          <a href=""><i class="fa-solid fa-phone"></i>+84 123456789</a>
+        </li>
+        <li>
+          <a href=""
+            ><i class="fa-solid fa-envelope"></i>support@bookdream.id</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+  integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script src="/Book Dream/js/increment-decrement.js"></script>
+<script src="/Book Dream/js/back-to-top.js"></script>
+<script>
+  let filterdiv = document.querySelector(".filter-option");
+  let iconbtn = document.querySelector(".rightbtn");
+
+  iconbtn.addEventListener("click", () => {
+    filterdiv.classList.toggle("active-div");
+    iconbtn.classList.toggle("active-btn");
+  });
+
+  // let editorpick = document.getElementsByClassName("select-box");
+  // let icon = document.querySelectorAll(".select-box .opt-title i");
+  // let answer = document.querySelectorAll(".select-box .option");
+  // for (let i = 0; i < editorpick.length; i++) {
+  //   editorpick[i].addEventListener("click", () => {
+  //     if (icon[i].classList.contains("active")) {
+  //       icon[i].classList.remove("active");
+  //       answer[i].style.maxHeight = null;
+  //       answer[i].style.marginTop = "0rem";
+  //       answer[i].style.padding = "0px";
+  //     } else {
+  //       icon[i].classList.add("active");
+  //       answer[i].style.maxHeight = answer[i].scrollHeight + "px";
+  //       answer[i].style.padding = "0px 20px 20px 20px";
+  //     }
+  //   });
+  // }
+
+  // let editorpick = document.getElementsByClassName("select-box");
+  // let icon = document.querySelectorAll(".select-box .opt-title i");
+  // let answer = document.querySelectorAll(".select-box .option");
+
+  // for (let i = 0; i < editorpick.length; i++) {
+  //   editorpick[i].addEventListener("click", (event) => {
+  //     event.stopPropagation();
+  //     if (!icon[i].classList.contains("active")) {
+  //       icon[i].classList.add("active");
+  //       answer[i].style.maxHeight = answer[i].scrollHeight + "px";
+  //       answer[i].style.padding = "0px 20px 20px 20px";
+  //     }
+  //   });
+  // }
+
+  let editorpick = document.getElementsByClassName("select-box");
+  let icon = document.querySelectorAll(".select-box .opt-title i");
+  let answer = document.querySelectorAll(".select-box .option");
+
+  for (let i = 0; i < editorpick.length; i++) {
+    editorpick[i].addEventListener("click", (event) => {
+      event.stopPropagation(); // Ngăn không cho sự kiện click lan truyền
+
+      // Nếu icon chưa active, mở rộng phần tử
+      if (!icon[i].classList.contains("active")) {
+        icon[i].classList.add("active");
+        answer[i].style.maxHeight = answer[i].scrollHeight + "px";
+        answer[i].style.padding = "0px 20px 20px 20px";
+      } else if (event.target === icon[i] || event.target === editorpick[i]) {
+        // Nếu icon đã active và người dùng click trực tiếp vào icon hoặc select-box, thu gọn phần tử
+        icon[i].classList.remove("active");
+        answer[i].style.maxHeight = null;
+        answer[i].style.padding = "0px";
+      }
+    });
+  }
+
+  // Đảm bảo các sự kiện click trong các option không làm ảnh hưởng đến trạng thái của select-box
+  let options = document.querySelectorAll(".select-box .option a"); // Giả sử các option là thẻ <a>
+  for (let opt of options) {
+    opt.addEventListener("click", (event) => {
+      event.stopPropagation(); // Ngăn sự kiện click lan truyền lên thẻ cha
+    });
+  }
+
+  let selectdate = document.querySelector(".select-date .opt-title");
+  let downarrow = document.querySelector(".select-date .opt-title i");
+  let option = document.querySelector(".select-date .option");
+  selectdate.addEventListener("click", () => {
+    if (downarrow.classList.contains("active")) {
+      downarrow.classList.remove("active");
+      option.style.display = "none";
+      option.style.padding = "0px";
+    } else {
+      downarrow.classList.add("active");
+      option.style.display = "block";
+      option.style.maxHeight = option.scrollHeight + "px";
+      option.style.padding = "0px 20px 20px 20px";
+    }
+  });
+
+  let likebtn = document.getElementsByClassName("like");
+  for (let i = 0; i < likebtn.length; i++) {
+    likebtn[i].addEventListener("click", () => {
+      likebtn[i].classList.toggle("liked");
+    });
+  }
+
+  const rangeInput = document.querySelectorAll(".range-input input"),
+    priceInput = document.querySelectorAll(".price-input input"),
+    range = document.querySelector(".slider .progress");
+  let priceGap = 1000;
+
+  priceInput.forEach((input) => {
+    input.addEventListener("input", (e) => {
+      let minPrice = parseInt(priceInput[0].value),
+        maxPrice = parseInt(priceInput[1].value);
+
+      if (maxPrice - minPrice >= priceGap && maxPrice <= rangeInput[1].max) {
+        if (e.target.className === "input-min") {
+          rangeInput[0].value = minPrice;
+          range.style.left = (minPrice / rangeInput[0].max) * 100 + "%";
+        } else {
+          rangeInput[1].value = maxPrice;
+          range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+        }
+      }
+    });
+  });
+
+  rangeInput.forEach((input) => {
+    input.addEventListener("input", (e) => {
+      let minVal = parseInt(rangeInput[0].value),
+        maxVal = parseInt(rangeInput[1].value);
+
+      if (maxVal - minVal < priceGap) {
+        if (e.target.className === "range-min") {
+          rangeInput[0].value = maxVal - priceGap;
+        } else {
+          rangeInput[1].value = minVal + priceGap;
+        }
+      } else {
+        priceInput[0].value = minVal;
+        priceInput[1].value = maxVal;
+        range.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+        range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+      }
+    });
+  });
+
+  $(document).ready(function () {
+    $('input[name="sale-type"]').change(function () {
+      if (this.value === "best-sales") {
+        // Giả sử data đã được tải và lưu trong biến global `allBooks`
+        let filteredBooks = allBooks.filter((book) => book.ratings > 4);
+        displayBooks(filteredBooks);
+      }
+    });
+  });
+
+  function displayBooks(books) {
+    $(".books").empty(); // Clear existing books
+    books.forEach((book) => {
+      $(".books").append(`<div class="book-card">
+    <div class="img">
+      <a href="book-detail.html"><img src="/Img/Books/${
+        book.images[0]
+      }" alt=""/></a>
+      <button class="like" id="likebtn">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+    </div>
+    <h5>${book.title}</h5>
+    <small>
+      ${book.category.map((cate) => `<a href="/">${cate}</a>`).join(", ")}
+    </small>
+    <div class="star-rating">
+      ${Array.from({ length: 5 }, (_, i) =>
+        i < book.ratings
+          ? '<i class="fa-solid fa-star"></i>'
+          : '<i class="fa-solid fa-star disabled"></i>'
+      ).join("")}
+    </div>
+  </div>`);
+    });
+  }
+
+  function filterBooksByRating() {
+    const selectedRadio = document.querySelector(
+      'input[name="sale-type"]:checked'
+    );
+    const booksContainer = document.getElementById("books-container"); // Đảm bảo ID này phù hợp với container chứa sách của bạn
+
+    if (selectedRadio && selectedRadio.value === "best-sales") {
+      // Chuyển NodeList thành mảng trước khi lọc
+      const books = Array.from(booksContainer.querySelectorAll(".book-card"));
+      const filteredBooks = books.filter((book) => {
+        const ratingElement = book.querySelector(".star-rating");
+        // Tính rating dựa trên số lượng icon sao
+        const rating =
+          ratingElement.querySelectorAll(".fa-solid.fa-star").length;
+        return rating >= 4.0;
+      });
+
+      // Xóa sách hiện tại
+      booksContainer.innerHTML = "";
+
+      // Hiển thị sách đã lọc
+      filteredBooks.forEach((book) => booksContainer.appendChild(book));
+    } else {
+      // Không áp dụng bộ lọc, hiển thị tất cả sách (tùy chọn)
+    }
+  }
+
+  const resetBtn = document.getElementById("reset-filter");
+  resetBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    window.location.href = "/filter";
+  });
+</script>

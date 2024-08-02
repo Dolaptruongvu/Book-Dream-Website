@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Dream</title>
+    <%- include("layout/favicon") %>
+  </head>
+  <body>
+    <%- include("layout/header") %>
+
+    <div class="breadcrumb-container">
+      <ul class="breadcrumb">
+        <li><a id="shopButton" style="color: #009bd6">Shop</a></li>
+        <li><a href="#">Cart</a></li>
+      </ul>
+    </div>
+
+    <section class="cart-item page">
+      <h2>Book Cart</h2>
+      <div class="product-table">
+        <table cellspacing="0">
+          <tr class="heading">
+            <th>Product Img</th>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Delete</th>
+          </tr>
+          <% for (var book of books) { %>
+          <tr class="data">
+            <td>
+              <img src="/Img/Books/<%=book.images[0] %>" alt="" />
+            </td>
+            <td><%= book.title %></td>
+            <td>$<%= book.price %></td>
+            <td>
+              <div><%= book.userQuantity %></div>
+            </td>
+            <td id="total-price" data-totalprice="<%= book.totalPrice %>">
+              $<%= book.totalPrice %>
+            </td>
+            <td class="delete-book" data-bookid="<%= book._id %>">
+              <i class="fa-solid fa-trash"></i>
+            </td>
+          </tr>
+          <% }%>
+        </table>
+      </div>
+      <!-- <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr> -->
+    </section>
+
+    <section class="discount-summary">
+      <!-- <div class="discount-section">
+        <h4>Discount Coupon</h4>
+        <div class="discount-form">
+          <input
+            type="text"
+            placeholder="Enter Coupon Code"
+            style="text-transform: uppercase"
+          />
+          <button>Apply Coupon</button>
+        </div>
+      </div> -->
+      <div class="summary-section">
+        <h4>Cart Subtotal</h4>
+        <div class="order-detail-table">
+          <table>
+            <tr>
+              <td>Order Subtotal</td>
+              <td>$<%= totalPrice %></td>
+            </tr>
+            <!-- <tr>
+              <td>Address</td>
+              <td>Address</td>
+            </tr> -->
+
+            <tr>
+              <td>Total</td>
+              <td>$<%= totalPrice %></td>
+            </tr>
+          </table>
+          <button id="online-pay">Online payment</button>
+          <button id="cash-pay">cash</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="book-sale">
+      <div class="heading">
+        <h4>Books On Sale</h4>
+        <div class="arrowbtn">
+          <i id="left" class="fa-solid fa-angle-left"></i>
+          <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+      </div>
+      <div class="book-container">
+        <div class="wrapper">
+          <ul class="carousel">
+            <li class="card">
+              <div class="img">
+                <img src="../images/book-1.jpg" alt="" />
+                <span class="badge">50%</span>
+              </div>
+              <h5>The Giver</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img src="../images/book-2.jpg" alt="" />
+                <span class="badge">50%</span>
+              </div>
+              <h5>The Wright ...</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img src="../images/book-9.jpg" alt="" />
+                <span class="badge">50%</span>
+              </div>
+              <h5>The Ruins Of...</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img src="../images/book-10.jpg" alt="" />
+                <span class="badge">50%</span>
+              </div>
+              <h5>Percy Jackson</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img src="../images/book-5.jpg" alt="" />
+                <span class="badge">50%</span>
+              </div>
+              <h5>To kill a...</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img src="../images/book-6.jpg" alt="" />
+                <span class="badge">50%</span>
+              </div>
+              <h5>Horry Potter</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img src="../images/book-7.jpg" alt="" />
+                <span class="badge">50%</span>
+              </div>
+              <h5>Heroes of ...</h5>
+              <div class="genre">
+                <span>adventure,</span><span>survival</span>
+              </div>
+              <div class="footer">
+                <span class="star"><i class="fa fa-star"></i> 4.7</span>
+                <div class="price">
+                  <span>$45.4</span>
+                  <span><strike>$90.4</strike></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section> -->
+
+    <%- include("layout/footer") %>
+
+    <!-- <button class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button> -->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+      integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/Book Dream/js/repeat-js.js"></script>
+    <script src="/Book Dream/js/cart.js"></script>
+    <script src="/Book Dream/js/back-to-top.js"></script>
+    <script>
+      document
+        .getElementById("profileButton")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.assign("/profile");
+        });
+
+      document
+        .getElementById("shopButton")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.assign("/filter");
+        });
+    </script>
+  </body>
+</html>

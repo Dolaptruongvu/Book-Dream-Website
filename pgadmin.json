@@ -1,0 +1,13 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "Bookstore",
+            "Group": "GROUP_TEST",
+            "Host": "pg-33c7a739-gm-09ec.e.aivencloud.com",
+            "Port": 21272,
+            "MaintenanceDB": "defaultdb",
+            "Username": "avnadmin",
+            "SSLMode": "require"
+        }
+    }
+}
